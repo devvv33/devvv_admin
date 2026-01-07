@@ -2,7 +2,7 @@
 
 这是一个把「日常工作里 90% 以上后台系统需求」沉淀成**可配置**能力的前端项目：通过配置菜单/页面/按钮/弹窗/字段，即可快速拼装出可用的后台界面。项目与 AI 协作共建，适合在此基础上继续无缝二次开发。
 
-- **在线演示**：[`https://demo.devvv.us.ci`](https://demo.devvv.us.ci/sys/menu)（使用 Mock 数据；请手下留情不要强刷）
+- **在线演示**：[`https://devvv33.github.io/devvv_admin/`](https://devvv33.github.io/devvv_admin/)（使用 Mock 数据）
 
 ### 核心功能
 
@@ -48,6 +48,7 @@ npm run build
 - **VITE_USE_ENCRYPT**：是否启用加密（生产环境建议 `true`）
 - **VITE_APP_VERSION**：客户端版本号（会进入客户端信息 `x-inf`）
 - **VITE_RSA_PUBLIC_KEY**：RSA 公钥（后端提供，用于加密 AES key）
+- **VITE_BASE_URL**：基础访问路径（生产环境建议 `/`）
 
 示例：
 

@@ -1,4 +1,4 @@
-import { defineConfig, type Plugin } from 'vite'
+import { defineConfig, loadEnv, type Plugin } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import archiver from 'archiver'
 import fs from 'node:fs'
@@ -42,34 +42,39 @@ function zipBuildOutputPlugin(): Plugin {
 }
 
 // https://vitejs.dev/config/
-export default defineConfig({
-  base: '/devvv_admin/',
-  plugins: [vue(), zipBuildOutputPlugin()],
-  resolve: {
-    alias: {
-      '@': resolve(rootDir, 'src'),
-    },
-  },
-  build: {
-    // 指定输出目录
-    outDir,
-    emptyOutDir: true,
-  },
-  server: {
-    host: '0.0.0.0',
-    port: 3000,
-    open: true,
-    proxy: {
-      // 代理所有 /api 开头的请求到后端服务器
-      '/cmsApi': {
-        target: 'http://localhost:8801',
-        changeOrigin: true,
-        // rewrite: (path) => path.replace(/^\/api/, ''),
-      },
-      '/cmsFile': {
-        target: 'http://localhost:8801',
-        changeOrigin: true,
+export default defineConfig(({ mode }) => {
+  // 加载环境变量
+  const env = loadEnv(mode, rootDir, '')
+  
+  return {
+    base: env.VITE_BASE_URL || '/',
+    plugins: [vue(), zipBuildOutputPlugin()],
+    resolve: {
+      alias: {
+        '@': resolve(rootDir, 'src'),
       },
     },
-  },
+    build: {
+      // 指定输出目录
+      outDir,
+      emptyOutDir: true,
+    },
+    server: {
+      host: '0.0.0.0',
+      port: 3000,
+      open: true,
+      proxy: {
+        // 代理所有 /api 开头的请求到后端服务器
+        '/cmsApi': {
+          target: 'http://localhost:8801',
+          changeOrigin: true,
+          // rewrite: (path) => path.replace(/^\/api/, ''),
+        },
+        '/cmsFile': {
+          target: 'http://localhost:8801',
+          changeOrigin: true,
+        },
+      },
+    },
+  }
 })
