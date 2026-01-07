@@ -2,14 +2,13 @@
 
 这是一个把「日常工作里 90% 以上后台系统需求」沉淀成**可配置**能力的前端项目：通过配置菜单/页面/按钮/弹窗/字段，即可快速拼装出可用的后台界面。项目与 AI 协作共建，适合在此基础上继续无缝二次开发。
 
-- **在线演示**：[`https://demo.devvv.us.ci`](https://demo.devvv.us.ci)（使用 Mock 数据；请手下留情不要强刷）
+- **在线演示**：[`https://demo.devvv.us.ci`](https://demo.devvv.us.ci/sys/menu)（使用 Mock 数据；请手下留情不要强刷）
 
-### 你会喜欢它的原因
+### 核心功能
 
 - **配置即功能**：列表页、查询条件、列字段、弹窗表单字段、弹窗列表字段、按钮行为，都可以通过配置生成
 - **简单页面无需重打包**：只要后端提供接口，前端通过配置即可渲染出可用页面（内置渲染/交互逻辑）
 - **复杂页面可自定义**：自行开发 Vue 组件，在菜单配置中填写组件名即可接入（该方式需要重新构建发布）
-- **内置 Mock**：可脱离后端直接跑起来做演示/联调
 - **接口加密**：请求参数完全加密传输（RSA + AES），与后端保持同一加解密协议
 - **增强图标系统**：Element Plus + Iconify 在线搜索（可扩展自定义图标）
 
@@ -30,13 +29,13 @@
 
 ```bash
 npm install
-npm dev
+npm run dev
 ```
 
 ### 构建
 
 ```bash
-npm build
+npm run build
 ```
 
 ---
@@ -148,22 +147,10 @@ web_vue/
 
 ---
 
-## 项目截图（欢迎补充）
+## 项目截图
 
-请将截图放到 `docs/screenshots/`，并按 README 内的文件名命名：
-
-- `docs/screenshots/login.png`
-- `docs/screenshots/menu-manage.png`
-- `docs/screenshots/list-page.png`
-- `docs/screenshots/modal-form.png`
-- `docs/screenshots/icon-selector.png`
-
-然后你可以在这里看到：
-
-![菜单配置](docs/screenshots/menu-manage.png)
+![菜单配置](docs/screenshots/menu-manager.png)
 ![列表页面](docs/screenshots/list-page.png)
-
-（若你还没放图，这些链接会显示为缺失，属于正常现象。）
 
 ---
 
