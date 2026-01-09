@@ -1,9 +1,17 @@
 ## DevvvAdmin（Vue 3）— 用配置驱动的后台管理系统
 
-这是一个把「日常工作里 90% 以上后台系统需求」沉淀成**可配置**能力的前端项目：通过配置菜单/页面/按钮/弹窗/字段，即可快速拼装出可用的后台界面。项目与 AI 协作共建，适合在此基础上继续无缝二次开发。
+这是一个把后台系统功能沉淀成**可配置**能力的前端项目：通过配置菜单/页面/按钮/弹窗/字段，即可快速拼装出可用的后台界面，能够帮你减少90%的页面开发工作量。项目是用AI开发而成,可基于此项目继续用AI开发新功能。
 
 - **在线演示**：[`https://devvv33.github.io/devvv_admin/`](https://devvv33.github.io/devvv_admin/)（使用 Mock 数据）
 
+---
+
+## 后端项目开源地址
+
+- **GitHub**：[`https://github.com/devvv33/devvv_admin_java`](https://github.com/devvv33/devvv_admin_java)
+- **Gitee**：[`https://gitee.com/devvv33/devvv_admin_java`](https://gitee.com/devvv33/devvv_admin_java)
+
+---
 ### 核心功能
 
 - **配置即功能**：列表页、查询条件、列字段、弹窗表单字段、弹窗列表字段、按钮行为，都可以通过配置生成
@@ -153,11 +161,6 @@ web_vue/
 ![菜单配置](docs/screenshots/menu-manager.png)
 ![列表页面](docs/screenshots/list-page.png)
 
----
-
-## 后端项目
-
-后端项目代码正在整理中，敬请期待...
 
 ---
 
